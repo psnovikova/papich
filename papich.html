@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <title>GIF</title>
     <link href="styles.css" rel="stylesheet" type="text/css">
+    <script>
+
+
+        const exit = () => {
+            localStorage.clear()
+        }
+    </script>
 </head>
 <body>
 <div class="gif" style="display: flex; width: 100vw; height: 100vh; flex-direction: column; justify-content: center; align-items: center">
@@ -11,6 +18,14 @@
     <div class="tenor-gif-embed" data-postid="20124926" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%">
     <button onclick="update-gif ()" class="b-update">Обновить папича</button>
 </div>
-    <img class="logout" src="1286853.png" width="20px" height="20 px">
+    <div class="logout">
+        <script> const username = () => {
+            var uname = localStorage.getItem('user')
+            var name = document.createElement(div)
+            name.innerHTML = uname
+        }
+        </script>
+        <a href="auth.html" onclick="exit ()"><img src="1286853.png" width="40px" height="40px"></a>
+    </div>
 </body>
 </html>
