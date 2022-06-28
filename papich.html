@@ -5,8 +5,6 @@
     <title>GIF</title>
     <link href="styles.css" rel="stylesheet" type="text/css">
     <script>
-
-
         const exit = () => {
             localStorage.clear()
         }
@@ -15,17 +13,16 @@
 <body>
 <div class="gif" style="display: flex; width: 100vw; height: 100vh; flex-direction: column; justify-content: center; align-items: center">
     <img width="498" height="280" src="https://media.tenor.com/images/f3d099099dac6d1c5a3a989bb0e496c8/tenor.gif" crossorigin="anonymous" alt="tenor.id">
-    <div class="tenor-gif-embed" data-postid="20124926" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%">
-    <button onclick="update-gif ()" class="b-update">Обновить папича</button>
+    <button onclick="updateGif()" class="b-update">Обновить папича</button>
 </div>
     <div class="logout">
-        <script> const username = () => {
+        <div id="username"></div>
+        <script>
+            var username = document.getElementById('username')
             var uname = localStorage.getItem('user')
-            var name = document.createElement(div)
-            name.innerHTML = uname
-        }
+            username.innerHTML = uname
         </script>
-        <a href="auth.html" onclick="exit ()"><img src="1286853.png" width="40px" height="40px"></a>
+        <a href="auth.html" onclick="exit()"><img src="1286853.png" width="40px" height="40px"></a>
     </div>
 </body>
 </html>
