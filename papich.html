@@ -11,12 +11,13 @@
     </script>
 </head>
 <body>
+<h1 class="header">Папич</h1>
 <div class="gif" style="display: flex; width: 100vw; height: 100vh; flex-direction: column; justify-content: center; align-items: center">
     <img width="498" height="280" src="https://media.tenor.com/images/f3d099099dac6d1c5a3a989bb0e496c8/tenor.gif" crossorigin="anonymous" alt="tenor.id">
     <button onclick="updateGif()" class="b-update">Обновить папича</button>
 </div>
-    <div class="logout">
-        <div id="username"></div>
+    <div class="logout" style="display: flex; align-items: center">
+        <div id="username" style="padding-right: 15px; font-size: 20px"></div>
         <script>
             var username = document.getElementById('username')
             var uname = localStorage.getItem('user')
