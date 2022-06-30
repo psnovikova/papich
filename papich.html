@@ -5,25 +5,38 @@
     <title>GIF</title>
     <link href="styles.css" rel="stylesheet" type="text/css">
     <script>
+        //очистка данных
         const exit = () => {
             localStorage.clear()
         }
+
+        //рандомные GIF
+        updateGif = async () => {
+            const req = await fetch('https://g.tenor.com/v1/random?q=%D0%BF%D0%B0%D0%BF%D0%B8%D1%87&key=Q4UUK6LY2NC0&limit=50')
+            const resp = await req.json()
+            console.log(resp.results[0])
+            const gifEl = resp.results[0].media[0].gif.url
+            document.getElementById('papichImg').src = gifEl
+        }
+
+        updateGif()
     </script>
 </head>
 <body>
 <h1 class="header">Папич</h1>
-<div class="gif" style="display: flex; width: 100vw; height: 100vh; flex-direction: column; justify-content: center; align-items: center">
-    <img width="498" height="280" src="https://media.tenor.com/images/f3d099099dac6d1c5a3a989bb0e496c8/tenor.gif" crossorigin="anonymous" alt="tenor.id">
+<div class="gif"
+     style="display: flex; width: 100vw; height: 100vh; flex-direction: column; justify-content: center; align-items: center">
+    <img class="papichGif" width="498" height="280" id="papichImg">
     <button onclick="updateGif()" class="b-update">Обновить папича</button>
 </div>
-    <div class="logout" style="display: flex; align-items: center">
-        <div id="username" style="padding-right: 15px; font-size: 20px"></div>
-        <script>
-            var username = document.getElementById('username')
-            var uname = localStorage.getItem('user')
-            username.innerHTML = uname
-        </script>
-        <a href="auth.html" onclick="exit()"><img src="1286853.png" width="40px" height="40px"></a>
-    </div>
+<div class="logout" style="display: flex; align-items: center">
+    <div id="username" style="padding-right: 15px; font-size: 20px"></div>
+    <script>
+        var username = document.getElementById('username')
+        var uname = localStorage.getItem('user')
+        username.innerHTML = uname
+    </script>
+    <a href="auth.html" onclick="exit()"><img src="1286853.png" width="40px" height="40px"></a>
+</div>
 </body>
 </html>
