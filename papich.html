@@ -32,9 +32,9 @@
 <div class="logout" style="display: flex; align-items: center">
     <div id="username" style="padding-right: 15px; font-size: 20px"></div>
     <script>
-        var username = document.getElementById('username')
-        var uname = localStorage.getItem('user')
-        username.innerHTML = uname
+        let usernameElement = document.getElementById('username')
+        let username = localStorage.getItem('user')
+        usernameElement.innerHTML = username
     </script>
     <a href="auth.html" onclick="exit()"><img src="1286853.png" width="40px" height="40px"></a>
 </div>
